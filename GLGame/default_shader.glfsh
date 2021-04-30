@@ -1,0 +1,14 @@
+#version 330 core
+out vec4 FragColor; // Output color in RGBA
+
+in vec3 outColor; // Input from Vertex Shader
+in vec2 textureCoordinate;
+in float alpha;
+
+uniform sampler2D tex0;
+
+void main()
+{
+	//FragColor = vec4(outColor.x, alpha, outColor.z, 1.0);
+	FragColor = texture(tex0, textureCoordinate);
+}
